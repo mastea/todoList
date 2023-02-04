@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple ToDo list</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+    body {
+        text-align: center;
+    }
+    .container {
+        width: 400px;
+        padding: 20px;
+    }
+    .list {
+        text-align: left;
+        list-style: none;
+        position: relative;
+        border: 1px solid #f0f0f0;
+        margin-bottom: 1px;
+    }
+    .delete {
+        display: none;
+    }
+    li {
+        padding: 7px 10px;
+    }
+    li:hover {
+        background-color: #f0f0f0;
+    }
+    li:hover + .delete, .delete:hover {
+        display: inline-block;
+        position: absolute;
+        bottom: 4px;
+        right: 4px;
+    }
+    .form-control {
+        display: inline-block;
+        width: auto;
+    }
+    </style>
+</head>
+<body>
+    <div class="container shadow">
+        <ul>
+            <%for (var i=0; i<newListItem.length; i++){%>
+                <div class="list">
+                    <li><%=newListItem[i]%></li>
+                    <button class="delete btn btn-outline-primary btn-sm" onclick="deleteItem(i)">Удалить<%=i%></button>
+                </div>
+            <%}%>
+        </ul>
+        <form action="/" method="post">
+            <input class="form-control form-control-sm mt-1" type="text" name="newItem">
+            <button class="btn btn-primary btn-sm mb-1" type="submit">Добавить</button>
+        </form>
+    </div>
+</body>
+</html>
