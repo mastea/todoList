@@ -17,6 +17,12 @@ app.post('/', (req, res) => {
     res.redirect('/');
 });
 
+// app.post('/', (req, res) => {
+//     var num = req.body.numDelete;
+//     // items.slice(num, 1);
+//     console.log(num);
+//     res.redirect('/');
+// });
 
 
 app.listen(3000, () => {

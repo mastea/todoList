@@ -41,19 +41,24 @@
     </style>
 </head>
 <body>
+    <!-- <h1>A simple TODO list</h1>
+    <h3>Start adding your tasks</h3> -->
     <div class="container shadow">
         <ul>
             <%for (var i=0; i<newListItem.length; i++){%>
                 <div class="list">
-                    <li><%=newListItem[i]%></li>
-                    <button class="delete btn btn-outline-primary btn-sm" onclick="deleteItem(i)">Удалить<%=i%></button>
+                    <form action="/" method="post">
+                    <li"><%=newListItem[i]%></li>
+                    <button class="delete btn btn-outline-primary btn-sm" name="deleteItemBtn" type="submit">Удалить<%=i%></button>
+                </form>
                 </div>
             <%}%>
         </ul>
         <form action="/" method="post">
             <input class="form-control form-control-sm mt-1" type="text" name="newItem">
-            <button class="btn btn-primary btn-sm mb-1" type="submit">Добавить</button>
+            <button class="btn btn-primary btn-sm mb-1" name="newItemBtn" type="submit">Добавить</button>
         </form>
     </div>
+    
 </body>
 </html>
