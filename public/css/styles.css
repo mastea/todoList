@@ -1,0 +1,40 @@
+body {
+    text-align: center;
+}
+.header {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+p {
+    margin-bottom: 0;
+}
+.container {
+    width: 400px;
+    padding: 20px;
+}
+.list {
+    text-align: left;
+    list-style: none;
+    position: relative;
+    border: 1px solid #f0f0f0;
+    margin-bottom: 1px;
+}
+.delete {
+    display: none;
+}
+li {
+    padding: 7px 10px;
+}
+li:hover {
+    background-color: #f0f0f0;
+}
+li:hover + .delete, .delete:hover {
+    display: inline-block;
+    position: absolute;
+    bottom: 4px;
+    right: 4px;
+}
+.form-control {
+    display: inline-block;
+    width: auto;
+}
