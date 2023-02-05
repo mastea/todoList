@@ -16,7 +16,11 @@ app.post('/', (req, res) => {
     var button = req.body.btnClick;
 
     if (button === "addNewItem"){
-        items.push(item);
+        if (item ==='') {
+            console.log("Empty field.");
+        } else {
+            items.push(item);
+        }
     } else {
         for (let i=0; i<items.length; i++) {
             if (button === "deleteItem"+i){
